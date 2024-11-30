@@ -296,6 +296,8 @@ app.get('/products/filter/os', (req, res) => {
 });
 
 // Endpoint to filter by price (less than or equal to the specified price)
+// NOTE: I have assumed price to be of int based on data as no explicit requirements have been given in this regard.
+// If it contains decimal then parseFloat or other methods can be used.
 app.get('/products/filter/price', (req, res) => {
   const { price } = req.query;
   const filteredProducts = products.filter(
